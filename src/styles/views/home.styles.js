@@ -13,7 +13,7 @@ export const useStyles = makeStyles(theme => ({
     backgroundRepeat: 'no-repeat',
     padding: '3rem',
     marginTop: '4rem',
-    height: '26rem',
+    height: '28rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

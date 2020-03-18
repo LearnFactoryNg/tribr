@@ -1,16 +1,27 @@
 import React from 'react';
 import GeneralLayout from "../components/layouts/GeneralLayout.component";
+import clsx from "clsx";
+import { Typography } from "@material-ui/core";
+import { useStyles } from "../styles/views/about.styles";
 
-const Contact = () => {
+const About = () => {
+  const classes = useStyles();
+
   return (
     <GeneralLayout>
-      <h4>Contact Us</h4>
+      <section className={clsx(classes.jumbotron, classes.bng3)}>
+        <div className={classes.overlay} />
+        <Typography variant={"h2"}>Contact Tribr</Typography>
+      </section>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolorem doloremque eius fugiat hic illo impedit ipsa itaque natus nisi, non odio placeat quibusdam rem reprehenderit rerum tenetur totam veritatis.
-      </p>
+      <section className={classes.info}>
+        <Typography variant={"body1"} className={classes.mission}>
+          Hey! wanna reach us? Hit us up on twitter... see the footer
+        </Typography>
+      </section>
     </GeneralLayout>
   );
 };
 
-export default Contact;
+export default About;
+
