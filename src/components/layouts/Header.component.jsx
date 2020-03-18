@@ -1,26 +1,34 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { useStyles } from "../../styles/lib/header.styles";
+import { headerNav } from "../../helpers/utils/headerNav.helper";
+import { MenuList } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={ classes.root }>
       <AppBar position="fixed">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={ classes.title }>
             Tribr
           </Typography>
-          <Button color="inherit">Get Started</Button>
+
+          <section className={classes.links}>
+            {
+              headerNav.map(({ to, name }, idx) => (
+                <NavLink to={ to } key={ idx } exact>
+                  <MenuList>{ name }</MenuList>
+                </NavLink>
+              ))
+            }
+          </section>
+          <Button color="inherit" href={"/login"}>Get Started</Button>
         </Toolbar>
       </AppBar>
     </div>

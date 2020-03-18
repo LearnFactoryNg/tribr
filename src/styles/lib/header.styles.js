@@ -10,4 +10,20 @@ export const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
+  links: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    width: '20%',
+
+    '& a': {
+      color: '#b1b1b1',
+      textDecoration: 'none',
+      padding: '0 1.2rem',
+
+      '&:hover': {
+        color: '#FEFEFE'
+      }
+    }
+  }
 }));
