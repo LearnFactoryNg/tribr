@@ -8,6 +8,7 @@ import SignUp from "../views/SignUp";
 import Dashboard from "../views/Dashboard";
 import NotFound from "../views/404";
 import ThemeProvider from "../helpers/themes/ThemeProvider.helper";
+import Blog from "../views/Blog";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/about"} component={About} />
           <Route exact path={"/contact"} component={Contact} />
+          <Route exact path={"/blog"} component={Blog} />
           <Route exact path={"/login"} component={Login} />
           <Route exact path={"/sign-up"} component={SignUp} />
           <Route exact path={"/dashboard"} component={Dashboard} />

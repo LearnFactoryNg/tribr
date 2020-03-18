@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import { useStyles } from "../../styles/lib/header.styles";
 import { headerNav } from "../../helpers/utils/headerNav.helper";
 import { MenuList } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const classes = useStyles();
@@ -16,7 +16,9 @@ const Header = () => {
       <AppBar position="fixed">
         <Toolbar>
           <Typography variant="h6" className={ classes.title }>
-            Tribr
+            <Link to={"/"}>
+              Tribr
+            </Link>
           </Typography>
 
           <section className={classes.links}>

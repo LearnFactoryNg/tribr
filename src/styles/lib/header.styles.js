@@ -9,12 +9,16 @@ export const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+
+    '& a': {
+      color: 'inherit',
+      textDecoration: 'none'
+    }
   },
   links: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
-    width: '20%',
 
     '& a': {
       color: '#b1b1b1',
