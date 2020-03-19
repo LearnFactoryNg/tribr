@@ -7,8 +7,8 @@ const GeneralLayout = ({ children }) => (
   <Grid>
     <Header />
 
-    <main style={ { marginTop: '4rem' } }>
-      { children }
+    <main style={{ marginTop: '4rem' }}>
+      {children}
     </main>
 
     <Footer />

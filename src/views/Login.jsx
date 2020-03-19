@@ -28,69 +28,69 @@ const Login = () => {
 
   return (
     <>
-      <Grid container className={ classes.root }>
-        <Grid item className={ classes.main } component={ Paper } elevation={ 2 }>
-          <header className={ classes.header }>
-            <Typography variant={ "h6" }>Welcome Back, Tribr</Typography>
+      <Grid container className={classes.root}>
+        <Grid item className={classes.main} component={Paper} elevation={2}>
+          <header className={classes.header}>
+            <Typography variant={"h6"}>Welcome Back, Tribr</Typography>
           </header>
 
           <Formik
-            initialValues={ initialValues }
-            validationSchema={ validateSchema }
-            onSubmit={ async (values, { resetForm, setSubmitting }) => {
+            initialValues={initialValues}
+            validationSchema={validateSchema}
+            onSubmit={async (values, { resetForm, setSubmitting }) => {
               console.log(values)
-            } }
+            }}
           >
-            { ({
-                 errors,
-                 handleSubmit,
-                 handleBlur,
-                 handleTouch,
-                 handleChange,
-                 isSubmitting,
-                 values: { email, password }
-               }) => (
-              <form onSubmit={ handleSubmit }>
-                <TribrInput
-                  required
-                  fullWidth
-                  value={ email }
-                  name={ "email" }
-                  type={ "email" }
-                  errors={ errors }
-                  label={ "Email" }
-                  touched={ handleTouch }
-                  handleBlur={ handleBlur }
-                  handleChange={ handleChange }
-                />
-
-                <TribrInput
-                  required
-                  fullWidth
-                  errors={ errors }
-                  value={ password }
-                  type={ "password" }
-                  name={ "password" }
-                  label={ "Password" }
-                  touched={ handleTouch }
-                  handleBlur={ handleBlur }
-                  handleChange={ handleChange }
-                />
-
-                <FormGroup className={ classes.button }>
-                  <TribrButton
-                    type={ "submit" }
-                    text={ "Login" }
-                    txtcolor={ "#E8E8E8" }
-                    loading={ isSubmitting }
+            {({
+              errors,
+              handleSubmit,
+              handleBlur,
+              handleTouch,
+              handleChange,
+              isSubmitting,
+              values: { email, password }
+            }) => (
+                <form onSubmit={handleSubmit}>
+                  <TribrInput
+                    required
+                    fullWidth
+                    value={email}
+                    name={"email"}
+                    type={"email"}
+                    errors={errors}
+                    label={"Email"}
+                    touched={handleTouch}
+                    handleBlur={handleBlur}
+                    handleChange={handleChange}
                   />
-                </FormGroup>
-              </form>
-            ) }
+
+                  <TribrInput
+                    required
+                    fullWidth
+                    errors={errors}
+                    value={password}
+                    type={"password"}
+                    name={"password"}
+                    label={"Password"}
+                    touched={handleTouch}
+                    handleBlur={handleBlur}
+                    handleChange={handleChange}
+                  />
+
+                  <FormGroup className={classes.button}>
+                    <TribrButton
+                      type={"submit"}
+                      text={"Login"}
+                      txtcolor={"#E8E8E8"}
+                      loading={isSubmitting}
+                    />
+                  </FormGroup>
+                </form>
+              )}
           </Formik>
 
-          <section className={ classes.signUp }>
-            <Link to={ "/sign-up" }>Sign Up Here</Link>
+          <section className={classes.signUp}>
+            <Link to={"/sign-up"}>Sign Up Here</Link>
           </section>
         </Grid>
       </Grid>
