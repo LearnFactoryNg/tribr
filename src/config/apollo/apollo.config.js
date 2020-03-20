@@ -8,9 +8,6 @@ const cache = new InMemoryCache();
 // get the token
 const token = sessionStorage.getItem('tribr_token') || '';
 
-console.log('token', token);
-
-
 // Setup apollo client
 const client = new ApolloClient({
   uri: SERVER_URL,
